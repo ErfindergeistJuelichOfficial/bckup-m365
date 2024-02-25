@@ -2,15 +2,8 @@
 import { IConfig, IDocLib, IList } from "./IConfig";
 import { IFile } from "./IFilte";
 
-var fs = require('fs');
-
-
-
-
-const { execSync, exec } = require('node:child_process');
-
-// m365 spo list get --webUrl "https://erfindergeist.sharepoint.com/sites/Vorstand/" --title "Mitgliederanträge"
-
+const fs = require('fs');
+const { execSync } = require('node:child_process');
 
 function createFolderIfNotExists(path: string) {
   if (!fs.existsSync(path)){
@@ -51,12 +44,8 @@ async function getFiles(docLib: IDocLib) {
 }
 
 async function getItems(list: IList) {
-  
   const listitemGet = execSync(`m365 spo listitem list --webUrl "${list.webUrl}" --listTitle "${list.title}"`).toString();
-
   const listitemGetJSON = await JSON.parse(listitemGet)
-
-  // console.log(listitemGetJSON)
 
   buildPath(list.localPath)
 
@@ -66,17 +55,12 @@ async function getItems(list: IList) {
     return json
   })
 
-  const x = await Promise.all(collection)
-
-
+  const resolves = await Promise.all(collection)
   
   const path = `./${list.localPath.join("/")}/${list.title}.json`
-  await fs.writeFileSync(path, JSON.stringify(x, null, 2), 'utf8');
+  await fs.writeFileSync(path, JSON.stringify(resolves, null, 2), 'utf8');
 
 }
-
-
-
 
 async function main(config: IConfig) {
   config.files?.forEach(docLib => {
@@ -96,10 +80,7 @@ async function main(config: IConfig) {
       console.log(error)
     }
   })
-  
 }
-
-
 
 const config: IConfig = {
   files: [
@@ -107,15 +88,21 @@ const config: IConfig = {
     //   webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
     //   folderUrl: "/Mitgliederantrge",
     //   localPath: ["bckup", "Vorstand", "Mitgliederantrge"]
-    // }
+    // },
+    {
+      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+      folderUrl: "/Plenen",
+      localPath: ["bckup", "Mitglieder", "Plenen"]
+    }
+
   ],
   lists: [
-    {
-      webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
-      title: "Mitgliederanträge",
-      localPath: ["bckup", "Vorstand"],
-      properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
-    }
+    // {
+    //   webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
+    //   title: "Mitgliederanträge",
+    //   localPath: ["bckup", "Vorstand"],
+    //   properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
+    // }
   ]
 
 }
