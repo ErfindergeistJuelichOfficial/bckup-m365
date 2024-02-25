@@ -1,0 +1,234 @@
+[
+  {
+    "File": {
+      "Name": "Pelikan Fabian.pdf"
+    },
+    "Person": {
+      "Title": "Fabian Pelikan"
+    },
+    "Eintritt": "2021-03-06T08:00:00Z",
+    "Austritt": null,
+    "Sepa": true,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:31Z",
+    "Modified": "2024-01-17T19:56:13Z"
+  },
+  {
+    "File": {
+      "Name": "Klamandt Roman.pdf"
+    },
+    "Person": {
+      "Title": "Roman Klamandt"
+    },
+    "Eintritt": "2021-03-06T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:31Z",
+    "Modified": "2024-01-17T19:56:07Z"
+  },
+  {
+    "File": {
+      "Name": "Rothe Johannes.pdf"
+    },
+    "Person": {
+      "Title": "Johannes Rothe"
+    },
+    "Eintritt": "2021-12-12T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:31Z",
+    "Modified": "2024-01-17T19:56:13Z"
+  },
+  {
+    "File": {
+      "Name": "Rinne Jürgen.pdf"
+    },
+    "Person": {
+      "Title": "Jürgen Rinne"
+    },
+    "Eintritt": "2021-12-22T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "Ehren Mitglied",
+    "Created": "2023-11-01T21:57:32Z",
+    "Modified": "2024-01-17T19:56:17Z"
+  },
+  {
+    "File": {
+      "Name": "Ogarkov Leonard.pdf"
+    },
+    "Person": {
+      "Title": "Leonard Ogarkov"
+    },
+    "Eintritt": "2021-12-30T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:39Z",
+    "Modified": "2024-01-17T19:56:10Z"
+  },
+  {
+    "File": {
+      "Name": "Karim Al Montassir.pdf"
+    },
+    "Person": {
+      "Title": "Karim Al Montassir"
+    },
+    "Eintritt": "2021-03-06T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:39Z",
+    "Modified": "2024-01-17T19:56:05Z"
+  },
+  {
+    "File": {
+      "Name": "Bauer Josef.pdf"
+    },
+    "Person": {
+      "Title": "Josef Bauer"
+    },
+    "Eintritt": "2021-11-29T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:40Z",
+    "Modified": "2024-01-17T19:55:49Z"
+  },
+  {
+    "File": {
+      "Name": "van Eickels Frederik.pdf"
+    },
+    "Person": {
+      "Title": "Frederik Van Eickels"
+    },
+    "Eintritt": "2021-12-28T08:00:00Z",
+    "Austritt": null,
+    "Sepa": true,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:46Z",
+    "Modified": "2024-01-17T19:56:21Z"
+  },
+  {
+    "File": {
+      "Name": "Eschweiler Lars.pdf"
+    },
+    "Person": {
+      "Title": "Lars Eschweiler"
+    },
+    "Eintritt": "2021-12-12T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:47Z",
+    "Modified": "2024-01-17T19:55:54Z"
+  },
+  {
+    "File": {
+      "Name": "Chakanga Hauke.pdf"
+    },
+    "Person": {
+      "Title": "Hauke Chakanga"
+    },
+    "Eintritt": "2021-12-13T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:47Z",
+    "Modified": "2024-01-17T19:55:53Z"
+  },
+  {
+    "File": {
+      "Name": "Holmes Tobias.pdf"
+    },
+    "Person": {
+      "Title": "Tobias Holmes"
+    },
+    "Eintritt": "2021-12-12T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:47Z",
+    "Modified": "2024-01-17T19:55:57Z"
+  },
+  {
+    "File": {
+      "Name": "Wagner Torsten.pdf"
+    },
+    "Person": {
+      "Title": "Torsten Wagner"
+    },
+    "Eintritt": "2021-12-28T08:00:00Z",
+    "Austritt": null,
+    "Sepa": true,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-01T21:57:48Z",
+    "Modified": "2024-01-17T19:56:22Z"
+  },
+  {
+    "File": {
+      "Name": "Bataille Leon.pdf"
+    },
+    "Person": {
+      "Title": "Leon Bataille"
+    },
+    "Eintritt": "2021-11-18T08:00:00Z",
+    "Austritt": "2023-06-01T07:00:00Z",
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": null,
+    "Created": "2023-11-01T21:57:48Z",
+    "Modified": "2023-12-31T11:12:46Z"
+  },
+  {
+    "File": {
+      "Name": "Klaus Pfeiffer.pdf"
+    },
+    "Person": {
+      "Title": "Klaus Pfeiffer"
+    },
+    "Eintritt": "2023-11-18T08:00:00Z",
+    "Austritt": null,
+    "Sepa": null,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2023-11-19T11:29:44Z",
+    "Modified": "2024-01-17T19:56:07Z"
+  },
+  {
+    "File": {
+      "Name": "Julien Secker.docx"
+    },
+    "Eintritt": null,
+    "Austritt": null,
+    "Sepa": false,
+    "Mitgliedsbeitragsmodell": "Ehren Mitglied",
+    "Created": "2023-11-22T16:20:51Z",
+    "Modified": "2024-01-17T19:56:01Z"
+  },
+  {
+    "File": {
+      "Name": "BrainergyPark_Mitgliedsantrag_Erfindergeist.pdf"
+    },
+    "Eintritt": "2022-03-22T07:00:00Z",
+    "Austritt": null,
+    "Sepa": true,
+    "Mitgliedsbeitragsmodell": "Förder Mitglied",
+    "Created": "2023-11-22T19:35:56Z",
+    "Modified": "2024-01-17T19:55:52Z"
+  },
+  {
+    "File": {
+      "Name": "Jürgen Pettrak.pdf"
+    },
+    "Person": {
+      "Title": "Jürgen Pettrak"
+    },
+    "Eintritt": null,
+    "Austritt": null,
+    "Sepa": true,
+    "Mitgliedsbeitragsmodell": "ordentliches Mitglied",
+    "Created": "2024-01-01T05:58:01Z",
+    "Modified": "2024-01-17T19:56:04Z"
+  }
+]
