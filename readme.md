@@ -1,5 +1,7 @@
 # bckup-m365
 
+
+tested in node 20
 ## todos
 - [ ] härten (Bigfixes, code review)
 - [ ] config fertig erstellen

@@ -6,6 +6,7 @@ export interface IDinges {
 export interface IDocLib extends IDinges {
   webUrl: string;
   folderUrl: string;
+  groupBy?: string[];
 }
 
 export interface IList extends IDinges{
