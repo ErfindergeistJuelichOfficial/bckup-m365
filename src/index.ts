@@ -2,6 +2,7 @@
 import { IConfig } from "./IConfig.js";
 import { getDocLibFiles } from "./getDocLibFiles.js";
 import { getListItems } from "./getListItems.js";
+import { writeJsonObjectFileSync } from "./writeJsonObjectFileSync.js";
 
 async function main(config: IConfig) {
   config.files?.forEach(docLib => {
@@ -13,9 +14,13 @@ async function main(config: IConfig) {
     }
   })
 
-  config.lists?.forEach(list => {
+  config.lists?.map(async list => {
     try {
-      getListItems(list)
+      const listItems = await getListItems(list)
+      const path = `./${list.localPath.join("/")}/${list.title}.json`
+
+      listItems ? writeJsonObjectFileSync(path, listItems) : void
+      console.log("file created:", path)
     }
     catch(error) {
       console.log(error)
@@ -36,23 +41,23 @@ const config: IConfig = {
     //   localPath: ["bckup", "Mitglieder", "Plenen"]
     // },
 
-    // {
-    //   webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
-    //   folderUrl: "/Rechnungen",
-    //   localPath: ["bckup", "Finanzen", "Rechnungen"],
-    //   groupBy:["Jahr"]
-    // },
+    {
+      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+      folderUrl: "/Rechnungen",
+      localPath: ["bckup", "Finanzen", "Rechnungen"],
+      groupBy: ["Jahr"]
+    },
 
     
 
   ],
   lists: [
-    {
-      webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
-      title: "Mitgliederanträge",
-      localPath: ["bckup", "Vorstand"],
-      properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
-    }
+    // {
+    //   webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
+    //   title: "Mitgliederanträge",
+    //   localPath: ["bckup", "Vorstand"],
+    //   properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
+    // }
   ]
 
 }
