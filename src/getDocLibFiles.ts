@@ -22,21 +22,25 @@ export async function getDocLibFiles(docLib: IDocLib) {
 
     buildPath(docLib.localPath)
 
-    const fileCollection = []
+    const listItemCollection = []
   
     json.map(async (item: IFile, index: number) => {
       
       let path = `./${docLib.localPath.join("/")}/${item.Name}`
 
-      if(docLib.properties) {
+      if(docLib.properties && docLib.title) {
         // We want some props
-        const itemProperties =  await spoListItemGet({
+        const itemProperties = await spoListItemGet({
           webUrl: docLib.webUrl,
           listTitle: docLib.title,
-          id: item.Id,
-          properties: list.properties.join(",")
+          uniqueId: item.UniqueId,
+          properties: docLib.properties.join(",")
         })
+
+        listItemCollection.push(itemProperties)
       }
+
+
       if(docLib?.groupBy && docLib.groupBy.length > 0) {
         const groupByValues = docLib.groupBy.map(gb => {
           // console.log("gb", gb)
