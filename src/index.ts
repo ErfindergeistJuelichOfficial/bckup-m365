@@ -5,9 +5,9 @@ import { getListItems } from "./getListItems.js";
 import { writeJsonObjectFileSync } from "./writeJsonObjectFileSync.js";
 
 async function main(config: IConfig) {
-  config.files?.forEach(docLib => {
+  config.files?.map(async docLib => {
     try {
-      getDocLibFiles(docLib)
+      await getDocLibFiles(docLib)
     }
     catch(error) {
       console.log(error)
@@ -45,6 +45,8 @@ const config: IConfig = {
       webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
       folderUrl: "/Rechnungen",
       localPath: ["bckup", "Finanzen", "Rechnungen"],
+      title: "Rechnungen",
+      properties: ["Jahr"],
       groupBy: ["Jahr"]
     },
 

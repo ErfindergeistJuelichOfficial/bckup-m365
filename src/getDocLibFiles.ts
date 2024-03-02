@@ -1,6 +1,9 @@
 import { IDocLib } from "./IConfig.js";
 import { IFile } from "./IFilte.js";
 import { buildPath } from "./buildPath.js";
+import { spoFileGet } from "./cli/spo-file-get.js";
+import { spoFileList } from "./cli/spo-file-list.js";
+import { spoListItemGet } from "./cli/spo-listitem-get.js";
 
 
 export async function getDocLibFiles(docLib: IDocLib) {
@@ -8,23 +11,32 @@ export async function getDocLibFiles(docLib: IDocLib) {
 
 
   try {
-
-    
-    const cli = await import("@pnp/cli-microsoft365")
-    const fileListCommandOutput = await cli.executeCommand("spo file list", { 
+    const json = await spoFileList<IFile[]>({
       webUrl: docLib.webUrl,
       folderUrl:docLib.folderUrl,
-      //recursive: true,
-      // fields:  ["Name", "UniqueId", "Betrag", "Jahr"].join(",")
-      properties: ["Betrag", "Jahr"].join(",")
-   })
-    const fileListJSON = await JSON.parse(fileListCommandOutput.stdout)
-    console.log("fileListJSON", fileListJSON)
+    })
+    
+    if(!json) {
+      throw Error("No Data")
+    }
+
     buildPath(docLib.localPath)
+
+    const fileCollection = []
   
-    fileListJSON.map(async (item: IFile, index: number) => {
+    json.map(async (item: IFile, index: number) => {
       
       let path = `./${docLib.localPath.join("/")}/${item.Name}`
+
+      if(docLib.properties) {
+        // We want some props
+        const itemProperties =  await spoListItemGet({
+          webUrl: docLib.webUrl,
+          listTitle: docLib.title,
+          id: item.Id,
+          properties: list.properties.join(",")
+        })
+      }
       if(docLib?.groupBy && docLib.groupBy.length > 0) {
         const groupByValues = docLib.groupBy.map(gb => {
           // console.log("gb", gb)
@@ -40,7 +52,14 @@ export async function getDocLibFiles(docLib: IDocLib) {
       }
 
       // console.log(item)
-      void await cli.executeCommand("spo file get", { webUrl: docLib.webUrl, id: item.UniqueId, asFile: true, path: path} )
+      await spoFileGet({
+        webUrl: docLib.webUrl,
+        uniqueId: item.UniqueId,
+        asFile: true,
+        path
+      })
+      
+      //await cli.executeCommand("spo file get", { webUrl: docLib.webUrl, id: item.UniqueId, asFile: true, path: path} )
       console.log("file created:", path)
     })
   }

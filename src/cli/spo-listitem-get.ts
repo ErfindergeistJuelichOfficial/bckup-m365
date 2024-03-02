@@ -1,4 +1,4 @@
-import { handleCliError } from './handleCliError.js';
+import { handleCliError } from '../handleCliError.js';
 
 interface Props {
   webUrl: string;
@@ -7,7 +7,7 @@ interface Props {
   properties?: string 
 }
 
-export async function getListItem(props: Props): Promise<any> {
+export async function spoListItemGet(props: Props): Promise<Object> {
   try {
     const cli = await import("@pnp/cli-microsoft365")
     const listitemGetCommandOutput = await cli.executeCommand("spo listitem get", {
@@ -17,7 +17,7 @@ export async function getListItem(props: Props): Promise<any> {
       properties: props.properties || undefined
     })
 
-    void handleCliError(listitemGetCommandOutput)
+    handleCliError(listitemGetCommandOutput)
 
     const json = await JSON.parse(listitemGetCommandOutput.stdout)
     return json

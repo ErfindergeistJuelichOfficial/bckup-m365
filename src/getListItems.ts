@@ -1,8 +1,7 @@
 import { IList } from "./IConfig.js";
 import { buildPath } from "./buildPath.js";
-import { writeJsonObjectFileSync } from "./writeJsonObjectFileSync.js";
 import { handleCliError } from "./handleCliError.js";
-import { getListItem } from "./getListItem.js";
+import { spoListItemGet } from "./cli/spo-listitem-get.js";
 
 export async function getListItems(list: IList) {
   try {
@@ -17,7 +16,7 @@ export async function getListItems(list: IList) {
     buildPath(list.localPath)
 
     const itemCollection = listitemGetJSON.map(async (item: any, index: number) => {
-      return await getListItem({
+      return await spoListItemGet({
         webUrl: list.webUrl,
         listTitle: list.title,
         id: item.Id,
