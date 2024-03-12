@@ -3,8 +3,15 @@ import { IConfig } from "./IConfig.js";
 import { getDocLibFiles } from "./getDocLibFiles.js";
 import { getListItems } from "./getListItems.js";
 import { writeJsonObjectFileSync } from "./writeJsonObjectFileSync.js";
+import { login } from './cli/login.js';
+import { env } from './env.js'
 
 async function main(config: IConfig) {
+
+  console.log(await login({
+    ...env
+  }))
+
   config.files?.map(async docLib => {
     try {
       await getDocLibFiles(docLib)
