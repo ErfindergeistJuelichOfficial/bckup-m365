@@ -8,10 +8,12 @@ import { env } from './env.js'
 
 async function main(config: IConfig) {
 
+  // Login
   console.log(await login({
     ...env
   }))
 
+  // get Files
   config.files?.map(async docLib => {
     try {
       await getDocLibFiles(docLib)
@@ -21,6 +23,7 @@ async function main(config: IConfig) {
     }
   })
 
+  // get lists
   config.lists?.map(async list => {
     try {
       const listItems = await getListItems(list)
@@ -48,25 +51,25 @@ const config: IConfig = {
     //   localPath: ["bckup", "Mitglieder", "Plenen"]
     // },
 
-    {
-      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
-      folderUrl: "/Rechnungen",
-      localPath: ["bckup", "Finanzen", "Rechnungen"],
-      title: "Rechnungen",
-      properties: ["Jahr"],
-      groupBy: ["Jahr"]
-    },
+    //{
+    //  webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+    //  folderUrl: "/Rechnungen",
+    //  localPath: ["bckup", "Finanzen", "Rechnungen"],
+    //  title: "Rechnungen",
+    //  properties: ["Jahr"],
+    //  groupBy: ["Jahr"]
+    //},
 
     
 
   ],
   lists: [
-    // {
-    //   webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
-    //   title: "Mitgliederanträge",
-    //   localPath: ["bckup", "Vorstand"],
-    //   properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
-    // }
+     {
+       webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
+       title: "Mitgliederanträge",
+       localPath: ["bckup", "Vorstand"],
+       properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
+     }
   ]
 
 }

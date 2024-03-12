@@ -5,11 +5,7 @@ import { spoFileGet } from "./cli/spo-file-get.js";
 import { spoFileList } from "./cli/spo-file-list.js";
 import { spoListItemGet } from "./cli/spo-listitem-get.js";
 
-
 export async function getDocLibFiles(docLib: IDocLib) {
-
-
-
   try {
     const json = await spoFileList<IFile[]>({
       webUrl: docLib.webUrl,
