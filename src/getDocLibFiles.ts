@@ -7,14 +7,16 @@ import { spoListItemGet } from "./cli/spo-listitem-get.js";
 
 export async function getDocLibFiles(docLib: IDocLib) {
   try {
-    const json = await spoFileList<IFile[]>({
+    let json = await spoFileList<IFile[]>({
       webUrl: docLib.webUrl,
-      folderUrl:docLib.folderUrl,
+      folderUrl:docLib.folderUrl
     })
     
     if(!json) {
       throw Error("No Data")
     }
+
+    json = json.filter(item => item.Name.indexOf(".aspx") < 1)
 
     buildPath(docLib.localPath)
 

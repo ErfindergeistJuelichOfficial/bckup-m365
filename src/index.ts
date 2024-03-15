@@ -51,25 +51,25 @@ const config: IConfig = {
     //   localPath: ["bckup", "Mitglieder", "Plenen"]
     // },
 
-    //{
-    //  webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
-    //  folderUrl: "/Rechnungen",
-    //  localPath: ["bckup", "Finanzen", "Rechnungen"],
-    //  title: "Rechnungen",
-    //  properties: ["Jahr"],
-    //  groupBy: ["Jahr"]
-    //},
+    {
+     webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+     folderUrl: "/Rechnungen",
+     localPath: ["bckup", "Finanzen", "Rechnungen"],
+     title: "Rechnungen",
+     properties: ["Jahr"],
+     groupBy: ["Jahr"]
+    },
 
     
 
   ],
   lists: [
-     {
-       webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
-       title: "Mitgliederanträge",
-       localPath: ["bckup", "Vorstand"],
-       properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
-     }
+    //  {
+    //    webUrl: "https://erfindergeist.sharepoint.com/sites/Vorstand/",
+    //    title: "Mitgliederanträge",
+    //    localPath: ["bckup", "Vorstand"],
+    //    properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
+    //  }
   ]
 
 }

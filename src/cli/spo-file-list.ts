@@ -13,7 +13,7 @@ export async function spoFileList<T>(props: ISpoFileList): Promise<T | null> {
     const resposneCommandOutput = await cli.executeCommand("spo file list", { 
       webUrl: props.webUrl,
       folderUrl: props.folderUrl,
-      fields: props.fields ? props.fields : ["Name", "UniqueId"],
+      fields: props.fields ? props.fields : undefined, //["Name", "UniqueId"],
       recursive: props.recursive ? props.recursive : true,
     })
 
