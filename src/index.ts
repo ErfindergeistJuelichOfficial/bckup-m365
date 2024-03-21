@@ -67,6 +67,26 @@ const config: IConfig = {
       folderUrl: "/Plenen",
       localPath: ["Mitglieder", "Plenen"]
     },
+    {
+      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+      folderUrl: "/Kontoauszuege",
+      localPath: ["Finanzen", "Kontoauszuege"]
+    },
+    {
+      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+      folderUrl: "/Kontakte",
+      localPath: ["Mitglieder", "Kontakte"]
+    },
+        {
+      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+      folderUrl: "/Finanzen",
+      localPath: ["Finanzen", "Finanzen"]
+    },
+    // TODO Dokumente Mitgliederversammlung in eigene DocLIb packe
+    // TODO Dokmente Finanzen, Steuer, Verträge in eigenen DocLib
+    // TODO Repaircafe DOkuente Generel. alles mit unterordnern und links. (achtung aspx
+    // TODO Mobilitätswoche 2 fotos in ein allgemeinen foto ordner verschieben
+    // TODO Marketing Generel und prüfen
 
     {
      webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
@@ -86,7 +106,14 @@ const config: IConfig = {
        title: "Mitgliederanträge",
        localPath: ["Vorstand"],
        properties:  ["Person/Title", "Eintritt", "Austritt", "Sepa", "Mitgliedsbeitragsmodell", "Created", "Modified", "File/Name" ]
-     }
+     },
+          {
+       webUrl: "https://erfindergeist.sharepoint.com/sites/Mitglieder/",
+       title: "Tatigkeitsnachweise",
+       localPath: ["Mitglieder"],
+       properties:  ["Title", "Datum", "Beschreibung", "Thema", "Beschreibung2", "Created", "Modified", "File/Name" ]
+     },
+     
   ]
 
 }
